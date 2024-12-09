@@ -1,0 +1,10 @@
+name: anaapp
+title:
+username: mathmarecol
+account: mathmarecol
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 13556504
+bundleId: 9486316
+url: https://mathmarecol.shinyapps.io/anaapp/
+version: 1

@@ -16,14 +16,14 @@ dat <- readr::read_csv("ACRN_Database_old.csv") %>%
   dplyr::mutate(latitude = round(latitude, 2),
                 longitude = round(longitude, 2))
 
-
+title <- "Ana's Habitat App"
 
 # Define UI for application that draws a histogram
-ui <- fluidPage(title = "Ana Amazing App (AAA)", # Application title
+ui <- fluidPage(title = title,
                 theme = bslib::bs_theme(
                   version = 5,
                   bootswatch = "flatly"),
-                shiny::h1("Ana's App"),
+                shiny::h1(title),
                 shiny::br(),
                 shiny::br(),
                 shiny::fluidRow(
@@ -58,13 +58,32 @@ ui <- fluidPage(title = "Ana Amazing App (AAA)", # Application title
                                   ),
                   ),
                   shiny::tabPanel(title = "Data",
+                                  shiny::br(),
+                                  shiny::br(),
                                   shiny::fluidRow(
-                                    shiny::br(),
                                     DT::DTOutput("dat_table"), # DTOutput
                                   ), # fluidRow
                   ) # tabpanel
 
-                ) # navbarPage
+                ), # navbarPage
+
+                # shiny::fluidRow(align = "center",
+                #                 shiny::br(),
+                #                 shiny::br(),
+                #                 "Prototype by Dr Jason D. Everett (UQ and Everdat Solutions Pty Ltd)",
+                #                 shiny::br())
+
+                # shiny::br(),
+                tags$footer(shiny::p("Prototype by Dr Jason D. Everett (UQ and Everdat Solutions Pty Ltd)"), # strong() = bold
+                            align = "center",
+                            style = "
+                 bottom:11.5px;
+                 width:100%;
+                 height:20px;
+                 color: black;
+                 padding: 0px;
+                 z-index: 100;
+                "),
 
 )
 
